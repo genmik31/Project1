@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Median Finding Algorithm - Michael LaBarbera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Median Finding Algorithm</h1>
+      <p class="project-subtitle">COP 3502C Programming Assignment</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="project1.html" class="current">Median Finding Algorithm</a>
+        <a href="project2.html">Trie Data Structure</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="project-image-section">
+        <img src="./images/median_algorithm.png" alt="Median Finding Algorithm Visualization" class="project-img">
+        <p><strong>Finding the ((n+1)/2)-th Highest Element Algorithm</strong></p>
+      </div>
+
+      <section>
+        <h2>Project Overview</h2>
+        <p>
+          This programming assignment was completed as part of COP 3502C (Programming Fundamentals) at UCF. 
+          The project focuses on implementing an efficient algorithm to find the median element in an 
+          unsorted array of distinct numbers, specifically the ((n+1)/2)-th highest element in an odd-length list.
+        </p>
+        <p>
+          The solution demonstrates proficiency in advanced sorting algorithms, memory management, 
+          and file I/O operations in the C programming language.
+        </p>
+      </section>
+
+      <section>
+        <h2>Problem Description</h2>
+        <p>
+          Given an input file containing an odd number of distinct integers, the program must efficiently 
+          determine and return the median value. The median is defined as the ((n+1)/2)-th highest element 
+          when the numbers are arranged in descending order.
+        </p>
+        <p>
+          The challenge requires handling potentially very large datasets while maintaining optimal 
+          performance and memory efficiency. The solution must read the data from a file, process it 
+          using appropriate algorithms, and output the correct median value.
+        </p>
+        
+        <h3>Algorithm Implementation</h3>
+        <p>
+          The solution uses a bottom-up merge sort algorithm to sort the array in descending order, 
+          then returns the element at position n/2 (which corresponds to the median for an odd-length array).
+        </p>
+        
+        <div class="code-snippet">
+// Core algorithm structure
+unsigned long get_the_element(unsigned long *arr, unsigned long size) {
+    // Allocate temporary array for mergesort
+    unsigned long *temp = malloc(sizeof(unsigned long) * size);
+    
+    // Bottom-up mergesort implementation (descending order)
+    for (unsigned long width = 1; width < size; width *= 2) {
+        // Merge adjacent subarrays of size 'width'
+        // ... merging logic with descending order comparison
+    }
+    
+    // Return the median element
+    return arr[size / 2];
+}
+        </div>
+      </section>
+
+      <section>
+        <h2>Technical Implementation</h2>
+        <div class="tech-stack">
+          <div class="tech-item">C Programming</div>
+          <div class="tech-item">Merge Sort</div>
+          <div class="tech-item">Dynamic Memory</div>
+          <div class="tech-item">File I/O</div>
+          <div class="tech-item">Algorithm Design</div>
+          <div class="tech-item">Time Complexity</div>
+        </div>
+        
+        <h3>Key Features</h3>
+        <ul>
+          <li>Dynamic memory allocation for handling variable input sizes</li>
+          <li>Bottom-up merge sort implementation for O(n log n) time complexity</li>
+          <li>Descending order sorting to efficiently find the highest elements</li>
+          <li>Robust file reading with error handling</li>
+          <li>Memory-efficient temporary array usage</li>
+          <li>Proper memory deallocation to prevent memory leaks</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Skills Learned</h2>
+        <div class="skills-learned">
+          <ul>
+            <li><strong>Advanced Sorting Algorithms:</strong> Implemented bottom-up merge sort with custom comparison logic</li>
+            <li><strong>Memory Management:</strong> Proper use of malloc, realloc, and free for dynamic memory allocation</li>
+            <li><strong>Algorithm Analysis:</strong> Understanding time and space complexity implications of different approaches</li>
+            <li><strong>File I/O Operations:</strong> Reading structured data from files with error handling</li>
+            <li><strong>C Programming Fundamentals:</strong> Pointers, arrays, and function parameter passing</li>
+            <li><strong>Problem Solving:</strong> Breaking down complex problems into manageable algorithmic steps</li>
+            <li><strong>Code Optimization:</strong> Writing efficient code that handles large datasets</li>
+            <li><strong>Debugging Techniques:</strong> Systematic approach to finding and fixing algorithmic errors</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Algorithm Complexity</h2>
+        <p>
+          The implemented solution achieves optimal performance characteristics for the median-finding problem:
+        </p>
+        <ul>
+          <li><strong>Time Complexity:</strong> O(n log n) due to the merge sort implementation</li>
+          <li><strong>Space Complexity:</strong> O(n) for the temporary array used during sorting</li>
+          <li><strong>Stability:</strong> The merge sort maintains relative order of equal elements</li>
+          <li><strong>Scalability:</strong> Handles large datasets efficiently within memory constraints</li>
+        </ul>
+        <p>
+          While more advanced algorithms like Quickselect could achieve O(n) average time complexity, 
+          the merge sort approach provides guaranteed O(n log n) performance with predictable behavior 
+          for all input cases.
+        </p>
+      </section>
+
+      <section>
+        <h2>Project Outcomes</h2>
+        <p>
+          Successfully implemented a robust median-finding algorithm that passed all test cases and 
+          demonstrated mastery of fundamental computer science concepts. The solution efficiently 
+          handles edge cases and large datasets while maintaining code readability and proper 
+          memory management practices.
+        </p>
+        <p>
+          This project reinforced understanding of sorting algorithms, algorithm analysis, and 
+          practical C programming skills essential for systems programming and algorithm implementation.
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

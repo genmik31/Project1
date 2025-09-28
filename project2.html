@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trie Data Structure - Michael LaBarbera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Trie Data Structure</h1>
+      <p class="project-subtitle">COP 3502C Advanced Data Structures Assignment</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="project1.html">Median Finding Algorithm</a>
+        <a href="project2.html" class="current">Trie Data Structure</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="project-image-section">
+        <img src="./images/trie_structure.png" alt="Trie Data Structure Visualization" class="project-img">
+        <p><strong>Trie Structure for Maximum Prefix Word Analysis</strong></p>
+      </div>
+
+      <section>
+        <h2>Project Overview</h2>
+        <p>
+          This advanced programming assignment was completed as part of COP 3502C (Programming Fundamentals) at UCF. 
+          The project involves implementing a Trie (prefix tree) data structure to solve a complex word analysis problem: 
+          finding the maximum number of words that serve as prefixes of a single word in a dictionary.
+        </p>
+        <p>
+          The solution demonstrates mastery of advanced data structures, dynamic memory management, 
+          recursive algorithms, and efficient tree traversal techniques in C programming.
+        </p>
+      </section>
+
+      <section>
+        <h2>Problem Description</h2>
+        <p>
+          Given a dictionary of words stored in a file, the program must build a Trie data structure 
+          and determine the maximum number of dictionary words that are prefixes of any single word. 
+          For example, if the dictionary contains "a", "an", "and", "ant", the word "ant" has 3 prefix 
+          words: "a", "an", and "ant" itself.
+        </p>
+        <p>
+          This problem requires efficient string processing, tree traversal algorithms, and careful 
+          memory management to handle large dictionaries while maintaining optimal performance.
+        </p>
+        
+        <div class="algorithm-steps">
+          <h3>Algorithm Steps</h3>
+          <ol>
+            <li>Build a Trie from all dictionary words</li>
+            <li>Traverse the Trie using iterative depth-first search</li>
+            <li>Count terminal nodes (complete words) along each path</li>
+            <li>Track the maximum count encountered during traversal</li>
+            <li>Return the maximum number of prefix words found</li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technical Implementation</h2>
+        <div class="tech-stack">
+          <div class="tech-item">C Programming</div>
+          <div class="tech-item">Trie Data Structure</div>
+          <div class="tech-item">Dynamic Memory</div>
+          <div class="tech-item">Stack-based Traversal</div>
+          <div class="tech-item">String Processing</div>
+          <div class="tech-item">Tree Algorithms</div>
+        </div>
+        
+        <h3>Data Structure Design</h3>
+        <div class="code-snippet">
+typedef struct TrieNode_s {
+    struct TrieNode_s *children[LETTER_COUNT];  // 26 child pointers
+    int is_terminal;                            // Flag for word endings
+} TrieNode;
+
+// Core algorithm using iterative traversal
+int max_num_prefix_words(TrieNode *node) {
+    // Stack-based iterative implementation
+    // Tracks both nodes and their prefix counts
+    // Returns maximum prefix count found
+}
+        </div>
+        
+        <h3>Key Features</h3>
+        <ul>
+          <li>Dynamic Trie construction with efficient memory allocation</li>
+          <li>Iterative traversal using custom stack implementation</li>
+          <li>Automatic stack resizing for handling deep tree structures</li>
+          <li>Terminal node tracking for accurate word counting</li>
+          <li>Complete memory deallocation with recursive cleanup</li>
+          <li>String trimming utilities for robust input processing</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Algorithm Analysis</h2>
+        <p>
+          The implemented solution achieves optimal performance for the prefix counting problem:
+        </p>
+        <ul>
+          <li><strong>Construction Time:</strong> O(nm) where n is the number of words and m is average word length</li>
+          <li><strong>Search Time:</strong> O(nodes) for complete tree traversal</li>
+          <li><strong>Space Complexity:</strong> O(nm) for Trie storage plus O(h) for traversal stack</li>
+          <li><strong>Memory Management:</strong> Dynamic allocation with proper cleanup to prevent leaks</li>
+        </ul>
+        
+        <h3>Iterative vs Recursive Approach</h3>
+        <p>
+          The solution uses an iterative stack-based approach instead of recursion to avoid 
+          stack overflow issues with deep tries. This design choice ensures scalability 
+          for large dictionaries with long words.
+        </p>
+      </section>
+
+      <section>
+        <h2>Skills Learned</h2>
+        <div class="skills-learned">
+          <ul>
+            <li><strong>Advanced Data Structures:</strong> Complete implementation of Trie with insertion, traversal, and deletion</li>
+            <li><strong>Dynamic Memory Management:</strong> Complex pointer manipulation and memory allocation strategies</li>
+            <li><strong>Algorithm Design:</strong> Converting recursive algorithms to iterative implementations</li>
+            <li><strong>Stack-based Algorithms:</strong> Custom stack implementation with dynamic resizing</li>
+            <li><strong>String Processing:</strong> Efficient character-to-index mapping and string manipulation</li>
+            <li><strong>Tree Traversal:</strong> Depth-first search with state tracking across nodes</li>
+            <li><strong>Problem Analysis:</strong> Breaking complex problems into manageable algorithmic components</li>
+            <li><strong>Performance Optimization:</strong> Memory-efficient solutions for large-scale data processing</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Implementation Challenges</h2>
+        <p>
+          This project presented several significant programming challenges that required 
+          advanced problem-solving skills:
+        </p>
+        <ul>
+          <li><strong>Memory Management:</strong> Properly allocating and deallocating complex tree structures</li>
+          <li><strong>Iterative Design:</strong> Converting naturally recursive tree algorithms to iterative form</li>
+          <li><strong>State Tracking:</strong> Maintaining prefix counts during tree traversal</li>
+          <li><strong>Dynamic Stacks:</strong> Implementing resizable stacks for unknown tree depths</li>
+          <li><strong>Edge Cases:</strong> Handling empty dictionaries, single characters, and deep nesting</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Real-World Applications</h2>
+        <p>
+          Trie data structures have numerous practical applications in computer science and software engineering:
+        </p>
+        <ul>
+          <li>Autocomplete and spell-checking systems</li>
+          <li>IP routing tables in network systems</li>
+          <li>Dictionary lookups and word games</li>
+          <li>DNA sequence analysis in bioinformatics</li>
+          <li>Search engine query optimization</li>
+        </ul>
+        <p>
+          This project provided hands-on experience with a fundamental data structure 
+          used extensively in modern software systems and algorithms.
+        </p>
+      </section>
+
+      <section>
+        <h2>Project Outcomes</h2>
+        <p>
+          Successfully implemented a complete Trie data structure with advanced traversal algorithms, 
+          demonstrating mastery of complex data structure concepts and advanced C programming techniques. 
+          The solution efficiently handles large dictionaries while maintaining code clarity and robust error handling.
+        </p>
+        <p>
+          This project significantly enhanced understanding of tree-based data structures, algorithm design patterns, 
+          and the practical trade-offs between recursive and iterative implementations in systems programming.
+        </p>
+      </section>
+    </main>
+</body>
+</html>
